@@ -1,0 +1,43 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner() {
+      return signedIn() && resource.data.userId == request.auth.uid;
+    }
+
+    function isAdmin() {
+      return signedIn() && request.auth.token.email == 'admin@roomify.com';
+    }
+
+    match /designs/{designId} {
+      allow create: if signedIn()
+        && request.resource.data.userId == request.auth.uid;
+
+      allow read: if isOwner() || isAdmin();
+
+      allow update: if (isOwner() || isAdmin())
+        && request.resource.data.userId == resource.data.userId;
+
+      allow delete: if isOwner() || isAdmin();
+    }
+
+    match /users/{userId} {
+      allow read: if signedIn() && (request.auth.uid == userId || isAdmin());
+      allow create: if signedIn() && request.auth.uid == userId && request.resource.data.isBlocked == false;
+      allow update: if signedIn() && (
+        (request.auth.uid == userId && request.resource.data.isBlocked == resource.data.isBlocked && request.resource.data.uid == resource.data.uid) ||
+        isAdmin()
+      );
+      allow delete: if isAdmin();
+    }
+
+    match /users/{userId}/designs/{designId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
