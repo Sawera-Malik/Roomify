@@ -28,41 +28,30 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = subscribeToAuthState(async (currentUser) => {
+    const unsubscribe = subscribeToAuthState((currentUser) => {
       setUser(currentUser);
-      
+
+      // Auth state should not wait for Firestore before rendering the app.
+      setLoading(false);
+
       if (currentUser) {
         setIsAdmin(Boolean(currentUser.email && ADMIN_EMAILS.includes(currentUser.email.toLowerCase())));
-        
-        try {
-          await syncUserToFirestore(currentUser);
-          const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
-          if (userDoc.exists() && userDoc.data().isBlocked) {
-            setIsBlocked(true);
-          } else {
-            setIsBlocked(false);
-          }
-        } catch (err) {
-          if (import.meta.env.DEV) {
-            console.error('Error synchronizing user or checking blocked status', err);
-          }
 
+        void (async () => {
           try {
+            await syncUserToFirestore(currentUser);
             const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
             setIsBlocked(userDoc.exists() && userDoc.data().isBlocked === true);
-          } catch (statusError) {
+          } catch (err) {
             if (import.meta.env.DEV) {
-              console.error('Error checking blocked status after synchronization failure', statusError);
+              console.error('Error synchronizing user or checking blocked status', err);
             }
-            setIsBlocked(false);
           }
-        }
+        })();
       } else {
         setIsBlocked(false);
         setIsAdmin(false);
       }
-      
-      setLoading(false);
     });
 
     return () => unsubscribe();

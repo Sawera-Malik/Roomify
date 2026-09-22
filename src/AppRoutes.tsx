@@ -41,10 +41,21 @@ function BlockedScreen() {
   );
 }
 
+function AuthLoadingScreen() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-[#F7F5F0] dark:bg-[#1A1814] px-4">
+      <div className="text-center">
+        <div className="mx-auto mb-4 h-10 w-10 animate-spin rounded-full border-2 border-[#E0D9CE] border-t-[#B08D57]" />
+        <p className="text-sm text-[#777777] dark:text-[#999390]">Opening Roomify...</p>
+      </div>
+    </div>
+  );
+}
+
 function PrivateLayout() {
   const { user, loading, isBlocked } = useAuth();
 
-  if (loading) return null;
+  if (loading) return <Layout />;
   if (!user) return <Navigate replace to="/signin" />;
   if (isBlocked) return <BlockedScreen />;
   
@@ -54,14 +65,14 @@ function PrivateLayout() {
 function AdminOnly() {
   const { loading, isAdmin } = useAuth();
 
-  if (loading) return null;
+  if (loading) return <AuthLoadingScreen />;
   return isAdmin ? <AdminPanel /> : <Navigate replace to="/home" />;
 }
 
 function PublicOnly() {
   const { user, loading } = useAuth();
 
-  if (loading) return null;
+  if (loading) return <AuthLoadingScreen />;
   return user ? <Navigate replace to="/home" /> : <SignIn />;
 }
 

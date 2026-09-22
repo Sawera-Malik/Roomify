@@ -1,3 +1,18 @@
+import feature1 from "../assets/feature1.png";
+import feature2 from "../assets/feature2.png";
+import feature3 from "../assets/feature3.png";
+import feature4 from "../assets/feature4.png";
+import gellary1 from "../assets/gellary1.png";
+import gellary2 from "../assets/gellary2.png";
+import gellary3 from "../assets/gellary3.png";
+import gellary4 from "../assets/gellary4.png";
+import gellary5 from "../assets/gellary5.png";
+import gellary6 from "../assets/gellary6.png";
+import moodboard from "../assets/moodboard.png";
+import moodboard2 from "../assets/moodboard2.png";
+import moodboard3 from "../assets/moodboard3.png";
+import trendpost from "../assets/trendspost.png";
+
 export const furnitureCategories = ["Furniture", "Seating", "Tables", "Beds", "Storage", "Lighting", "Plants", "Decor", "Rugs", "Wall Art"];
 
 export const furnitureItems = [
@@ -24,31 +39,6 @@ export const furnitureItems = [
   { name: "Wardrobe", category: "Storage", emoji: "🚪" },
   { name: "Desk", category: "Tables", emoji: "🖥️" },
 ];
-
-export const productImages: Record<string, string> = {
-  Sofa: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=320&h=240&fit=crop&auto=format',
-  Armchair: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=320&h=240&fit=crop&auto=format',
-  'Dining Chair': 'https://images.unsplash.com/photo-1503602642458-232111445657?w=320&h=240&fit=crop&auto=format',
-  'Lounge Chair': 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=320&h=240&fit=crop&auto=format',
-  'Coffee Table': 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=320&h=240&fit=crop&auto=format',
-  'Dining Table': 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=320&h=240&fit=crop&auto=format',
-  'Side Table': 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=320&h=240&fit=crop&auto=format',
-  'Floor Lamp': 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=320&h=240&fit=crop&auto=format',
-  'Pendant Light': 'https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=320&h=240&fit=crop&auto=format',
-  Bookshelf: 'https://images.unsplash.com/photo-1594620302200-9a762244a156?w=320&h=240&fit=crop&auto=format',
-  Cabinet: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=320&h=240&fit=crop&auto=format',
-  Plant: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=320&h=240&fit=crop&auto=format',
-  'Fiddle Leaf': 'https://images.unsplash.com/photo-1593691509543-c55fb32e5cee?w=320&h=240&fit=crop&auto=format',
-  'Abstract Print': 'https://images.unsplash.com/photo-1549490349-8643362247b5?w=320&h=240&fit=crop&auto=format',
-  Mirror: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=320&h=240&fit=crop&auto=format',
-  'Area Rug': 'https://images.unsplash.com/photo-1600166898405-da9535204843?w=320&h=240&fit=crop&auto=format',
-  'Bed Frame': 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=320&h=240&fit=crop&auto=format',
-  'King Bed': 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=320&h=240&fit=crop&auto=format',
-  'Bunk Bed': 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=320&h=240&fit=crop&auto=format',
-  Nightstand: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=320&h=240&fit=crop&auto=format',
-  Wardrobe: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=320&h=240&fit=crop&auto=format',
-  Desk: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=320&h=240&fit=crop&auto=format',
-};
 
 export const roomTypes = ["Living Room", "Bedroom", "Office"];
 export const wallColors = ["#F7F5F0", "#E8E1D5", "#D4C4A8", "#C5D5C5", "#B8C4D4", "#E8C4B8", "#252525", "#1F2933"];
@@ -85,25 +75,25 @@ export const featuredDesigns = [
   {
     title: "Modern Living Room",
     style: "Modern",
-    img: "https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?w=800&h=600&fit=crop&auto=format",
+    img: feature1,
     tag: "Popular",
   },
   {
     title: "Scandinavian Bedroom",
     style: "Scandinavian",
-    img: "https://images.unsplash.com/photo-1724582586413-6b69e1c94a17?w=800&h=600&fit=crop&auto=format",
+    img: feature2,
     tag: "Trending",
   },
   {
     title: "Cozy Workspace",
     style: "Minimal",
-    img: "https://images.unsplash.com/photo-1560890264-4b92305ee66e?w=800&h=600&fit=crop&auto=format",
+    img: feature3,
     tag: "New",
   },
   {
     title: "Luxury Lounge",
     style: "Luxury",
-    img: "https://images.unsplash.com/photo-1646987916641-1f3c8992daa2?w=800&h=600&fit=crop&auto=format",
+    img: feature4,
     tag: "Editor's Pick",
   },
 ];
@@ -140,12 +130,12 @@ export const steps = [
 ];
 
 export const galleryImages = [
-  { img: "https://images.unsplash.com/photo-1724582586529-62622e50c0b3?w=600&h=400&fit=crop&auto=format", h: "h-48" },
-  { img: "https://images.unsplash.com/photo-1552558636-f6a8f071c2b3?w=600&h=700&fit=crop&auto=format", h: "h-72" },
-  { img: "https://images.unsplash.com/photo-1704040686413-2c607dbd2f06?w=600&h=500&fit=crop&auto=format", h: "h-56" },
-  { img: "https://images.unsplash.com/photo-1724582586495-d050726cf354?w=600&h=400&fit=crop&auto=format", h: "h-48" },
-  { img: "https://images.unsplash.com/photo-1722605090433-41d1183a792d?w=600&h=600&fit=crop&auto=format", h: "h-64" },
-  { img: "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=600&h=400&fit=crop&auto=format", h: "h-48" },
+  { img: gellary1, h: "h-48" },
+  { img: gellary2, h: "h-72" },
+  { img: gellary3, h: "h-56" },
+  { img: gellary4, h: "h-48" },
+  { img: gellary5, h: "h-64" },
+  { img: gellary6, h: "h-48" },
 ];
 
 export const testimonials = [
@@ -176,7 +166,7 @@ export const collections = [
   {
     title: "The Nordic Edit",
     desc: "Quiet whites, raw wood, linen textures — a celebration of functional beauty.",
-    cover: "https://images.unsplash.com/photo-1724582586413-6b69e1c94a17?w=900&h=600&fit=crop&auto=format",
+    cover: feature2,
     count: 18,
     tag: "Scandinavian",
     accent: "#C4B99A",
@@ -184,7 +174,7 @@ export const collections = [
   {
     title: "Warm Modernism",
     desc: "Structured forms softened by earthy tones and organic materials.",
-    cover: "https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?w=900&h=600&fit=crop&auto=format",
+    cover: feature1,
     count: 24,
     tag: "Modern",
     accent: "#B08D57",
@@ -192,7 +182,7 @@ export const collections = [
   {
     title: "Dark Luxury",
     desc: "Moody palettes, velvet surfaces, and the drama of low light.",
-    cover: "https://images.unsplash.com/photo-1646987916641-1f3c8992daa2?w=900&h=600&fit=crop&auto=format",
+    cover: feature4,
     count: 12,
     tag: "Luxury",
     accent: "#7B5E3A",
@@ -200,7 +190,7 @@ export const collections = [
   {
     title: "The Quiet Office",
     desc: "Thoughtful workspaces that encourage focus and calm creativity.",
-    cover: "https://images.unsplash.com/photo-1560890264-4b92305ee66e?w=900&h=600&fit=crop&auto=format",
+    cover: feature3,
     count: 9,
     tag: "Minimal",
     accent: "#8FA89A",
@@ -212,28 +202,28 @@ export const moodboards = [
     title: "Golden Hour",
     palette: ["#F5E6C8", "#D4A96A", "#8B6340", "#3D2B1F", "#F7F2EA"],
     mood: "Warm · Intimate · Rich",
-    img: "https://images.unsplash.com/photo-1704040686413-2c607dbd2f06?w=700&h=480&fit=crop&auto=format",
+    img: gellary3,
     rooms: ["Living Room", "Bedroom"],
   },
   {
     title: "Arctic White",
     palette: ["#F8F7F4", "#E4DDD3", "#B0A898", "#6B6360", "#2C2A28"],
     mood: "Clean · Spacious · Minimal",
-    img: "https://images.unsplash.com/photo-1556020685-ae41abfc9365?w=700&h=480&fit=crop&auto=format",
+    img: moodboard,
     rooms: ["Bedroom", "Office"],
   },
   {
     title: "Forest & Stone",
     palette: ["#3D5A40", "#6B8C6E", "#C4B5A0", "#8B7355", "#F0EBE3"],
     mood: "Natural · Earthy · Grounded",
-    img: "https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?w=700&h=480&fit=crop&auto=format",
+    img: moodboard2,
     rooms: ["Office", "Living Room"],
   },
   {
     title: "Midnight Marble",
     palette: ["#1A1814", "#2E2B27", "#5C5249", "#B08D57", "#F7F5F0"],
     mood: "Dramatic · Bold · Luxe",
-    img: "https://images.unsplash.com/photo-1722605090433-41d1183a792d?w=700&h=480&fit=crop&auto=format",
+    img: moodboard3,
     rooms: ["Kitchen", "Living Room"],
   },
 ];
@@ -242,7 +232,7 @@ export const trendPosts = [
   {
     title: "Boucle is back — and softer than ever",
     excerpt: "The tactile fabric of the moment is finding its way into every room of the house.",
-    img: "https://images.unsplash.com/photo-1552558636-f6a8f071c2b3?w=500&h=340&fit=crop&auto=format",
+    img: gellary2,
     readTime: "3 min read",
     category: "Trends",
     date: "Sep 14, 2026",
@@ -250,7 +240,7 @@ export const trendPosts = [
   {
     title: "How curves replaced corners in modern interiors",
     excerpt: "Rounded edges are reshaping the way we think about furniture and architecture.",
-    img: "https://images.unsplash.com/photo-1786107727673-dfb789a4e5c8?w=500&h=340&fit=crop&auto=format",
+    img: gellary3,
     readTime: "4 min read",
     category: "Design",
     date: "Sep 10, 2026",
@@ -258,7 +248,7 @@ export const trendPosts = [
   {
     title: "The case for a single statement piece",
     excerpt: "One bold item — a sofa, a light, a rug — can anchor an entire room's identity.",
-    img: "https://images.unsplash.com/photo-1663811397219-c572550dffc5?w=500&h=340&fit=crop&auto=format",
+    img:trendpost,
     readTime: "5 min read",
     category: "Styling",
     date: "Sep 4, 2026",

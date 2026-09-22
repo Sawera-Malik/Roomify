@@ -7,7 +7,7 @@ import DesignTopBar from './components/DesignTopBar';
 import FurniturePanel from './components/FurniturePanel';
 import DesignCanvas from './components/DesignCanvas';
 import DesignControls from './components/DesignControls';
-import { furnitureCategories, furnitureItems, productImages } from '../../constants';
+import { furnitureCategories, furnitureItems } from '../../constants';
 
 function Studio() {
   const location = useLocation();
@@ -208,11 +208,7 @@ function Studio() {
                   onClick={() => { addFurniture(item); setShowFurnitureModal(false); }}
                   className="flex flex-col items-center gap-2 p-3 rounded-xl bg-[#F7F5F0] dark:bg-[#2E2B27] hover:bg-[#E8E1D5] dark:hover:bg-[#3A3530] transition-colors border border-transparent hover:border-[#B08D57]/30 text-center"
                 >
-                  {productImages[item.name] ? (
-                    <img src={productImages[item.name]} alt={item.name} className="w-20 h-14 object-cover rounded-lg pointer-events-none" />
-                  ) : (
-                    <span className="text-3xl pointer-events-none">{item.emoji}</span>
-                  )}
+                  <span className="text-3xl pointer-events-none" aria-hidden="true">{item.emoji}</span>
                   <span className="text-xs font-medium text-[#252525] dark:text-[#F7F5F0]">{item.name}</span>
                   <span className="text-[10px] text-[#777777]">{item.category}</span>
                   <span className="text-xs text-[#B08D57] font-medium">+ Add</span>

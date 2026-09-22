@@ -1,6 +1,5 @@
 import { useState, useCallback } from 'react';
 import type { Design, FurnitureItem } from '../types';
-import { productImages } from '../constants';
 
 export function useDesign(initialDesign?: Design) {
   const [designId, setDesignId] = useState<string | null>(initialDesign?.id ?? null);
@@ -16,7 +15,6 @@ export function useDesign(initialDesign?: Design) {
     const f = (initialDesign?.furniture as FurnitureItem[] | undefined) ?? [];
     return f.map(item => ({
       ...item,
-      imageUrl: item.imageUrl ?? productImages[item.name],
       scale: item.scale ?? 1,
     }));
   });
@@ -28,7 +26,6 @@ export function useDesign(initialDesign?: Design) {
       id: `${item.name}-${Date.now()}`,
       name: item.name,
       emoji: item.emoji,
-      imageUrl: productImages[item.name],
       x: 100 + Math.random() * 200,
       y: 100 + Math.random() * 150,
       rotation: 0,

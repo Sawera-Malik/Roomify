@@ -1,4 +1,4 @@
-import { furnitureCategories, furnitureItems, productImages } from '../../../constants';
+import { furnitureCategories, furnitureItems } from '../../../constants';
 
 interface FurniturePanelProps {
   activeLeftCat: string;
@@ -49,15 +49,7 @@ export default function FurniturePanel({
               onClick={() => onAddFurniture(item)}
               className="flex flex-col items-center gap-1 p-2 rounded-lg bg-[#F7F5F0] dark:bg-[#2E2B27] hover:bg-[#E8E1D5] dark:hover:bg-[#3A3530] transition-colors text-center"
             >
-              {productImages[item.name] ? (
-                <img
-                  src={productImages[item.name]}
-                  alt={item.name}
-                  className="w-12 h-10 object-cover rounded-md"
-                />
-              ) : (
-                <span className="text-xl">{item.emoji}</span>
-              )}
+              <span className="text-xl" aria-hidden="true">{item.emoji}</span>
               <span className="text-[10px] text-[#777777] leading-tight">{item.name}</span>
             </button>
           ))}
